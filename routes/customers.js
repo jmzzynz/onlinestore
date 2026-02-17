@@ -48,7 +48,7 @@ router.put('/:u', function(request, response){
     })
 } );
 
-router.patch('/:u', function(request, response)){
+router.patch('/:u', function(request, response){
     customers.updatePassword(request.params.u, request.body, function(err, result){
         if(err){
             response.send(err);
@@ -56,9 +56,9 @@ router.patch('/:u', function(request, response)){
             response.json(result);
         }
     });
-};
+});
 
-router.delete('/:u', function(request, response)){
+router.delete('/:u', function(request, response){
     customers.delete(request.params.u, request.body, function(err, result){
         if(err){
             response.send(err);
@@ -66,6 +66,6 @@ router.delete('/:u', function(request, response)){
             response.json(result);
         }
     });
-};
+});
 
 module.express=router;
